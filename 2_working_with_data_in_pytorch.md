@@ -15,8 +15,8 @@ It's important to note that PyTorch is considered a Pythonic library, which mean
 ## PyTorch Fundamentals - Neural Networks
 
 A neural network's (NN) implementation works just like a neuron in the human brain:
-- We have an artificial neuron called perceptron
-- A neuron connects through axons (which in NNs are called **configurations**) to communicate data
+- We have artificial neurons called perceptrons
+- A perceptron, just like a neuron would, connects with other neurons through axons (which in NNs are called **configurations**) to transmit data bilaterally
 
 In NNs, perceptrons are composed of a series of inputs and produce an output. So, at least, we'll always have one input layer and one output layer; it's up to us programmers to decide how these layers communicate and in which order.
 
