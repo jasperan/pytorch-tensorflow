@@ -10,6 +10,8 @@ It's important to note that PyTorch is considered a Pythonic library, which mean
 - It's used in Facebook by engineers
 - It uses **tensors**, which can be thought of as a GPU-equivalent of NumPy arrays (or computer-optimized matrices).
 
+![tensor](https://raw.githubusercontent.com/jasperan/pytorch-tensorflow/main/img/tensor.PNG?raw=true)
+
 ## PyTorch Fundamentals - Neural Networks
 
 A neural network's (NN) implementation works just like a neuron in the human brain:
@@ -19,9 +21,17 @@ A neural network's (NN) implementation works just like a neuron in the human bra
 In NNs, perceptrons are composed of a series of inputs and produce an output. So, at least, we'll always have one input layer and one output layer; it's up to us programmers to decide how these layers communicate and in which order.
 
 There are two types of neural networks:
-- Feedforward NNs: data moves from the input layer to the output layer (through hidden layers or not, depends on the problem); and by the time data reaches the output layer, the NN has completed its job. 
+- Feedforward NNs: data moves from the input layer to the output layer (through hidden layers or not, depends on the problem); and by the time data reaches the output layer, the NN has completed its job.
 - Recurrent NNs: data doesn't stop at the output layer. Rather than doing so, it feeds again into previously-traversed layers recurrently, performing a specified number of cycles
     It's important to note that calculating gradients is based on [the chain rule](https://tutorial.math.lamar.edu/classes/calcI/ChainRule.aspx), which requires a bit of background in advanced mathematics. However, PyTorch has been kind enough to implement their own "automatic gradient calculator", called __autograd__, which does most of the mathematical work automatically. We'll talk more about this technique called [automatic differentiation](https://blog.paperspace.com/pytorch-101-understanding-graphs-and-automatic-differentiation/) later.
+
+Here's an image of a feedforward NN, where we see only forward steps from the inputs (below) towards the outputs (above):
+
+![feedforward](https://raw.githubusercontent.com/jasperan/pytorch-tensorflow/main/img/feedforward.PNG?raw=true)
+
+And here's an image of a recurrent NN. Note that if we have more than one hidden layer, we can call the NN a **deep NN**.
+
+![recurrent](https://raw.githubusercontent.com/jasperan/pytorch-tensorflow/main/img/recurrent.PNG?raw=true)
 
 ## Tensors
 
