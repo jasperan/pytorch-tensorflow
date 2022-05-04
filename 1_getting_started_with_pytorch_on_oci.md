@@ -1,6 +1,8 @@
 # Getting Started with PyTorch on OCI
 
-Welcome to the first article of an article series, where we'll make an introduction on advanced AI/ML libraries such as PyTorch and TensorFlow. Typically, there's a positive sentiment towards PyTorch and how great it is, and a more negative social sentiment towards TensorFlow. However, both libraries have unique capabilities; and I hope that, through this series of articles, I'll be able to break the stigma and show that both libraries are great, while showing some of the capabilities along the way. We'll learn how to set up OCI to work on a problem with PyTorch, how to develop this problem into a solution with a robust architecture, and finally benchmark the performance of both libraries to see which library works best for the specific problem.
+Welcome to the first article of this series, where we’ll explore AI/ML libraries such as PyTorch and TensorFlow. Typically, there’s a positive sentiment towards PyTorch and how great it is, and a more negative social sentiment towards TensorFlow. However, both libraries have unique capabilities and I hope that, through this series of articles, I’ll be able to break the stigma and show that both libraries are great while showing some of the capabilities along the way.
+
+We’ll learn how to set up OCI to work on an issue with PyTorch, how to develop this issue into a solution with a robust architecture, and finally benchmark the performance of both libraries to see which library works best for that specific issue.
 
 ## A Brief History of ML
 
@@ -11,19 +13,17 @@ Before getting started on setting up environments and all the "technical" stuff,
 
 As Tensorflow was created a year before, it gained popularity quickly in the Data Science world, and this increase can be observed in the general sentiment of these libraries, as well as by comparing the number of commits in both open-source repositories, where [TensorFlow](https://github.com/tensorflow/tensorflow) has about 3 times the number of stars in GitHub than [PyTorch's](https://github.com/pytorch/pytorch).
 
-It's clear that nowadays, Data Science is growing very rapidly since we have an ever-increasing amount of unstructured (and structured!) data available to us. It's our job to understand this data and make sense of it. At the second half of the 20th century, Artificial Intelligence (AI) as we know it today was created. This allowed humans to "relax" their complex calculations, while delegating this job to a machine. Machine Learning has since become an important part of everyday life, even if it's not apparent at the beginning:
-- Email spam filters are based on ML models,
-- Advanced video-game anti cheating systems (to prevent hackers) are based on ML models, that compare data from legitimate players to data from cheaters and analyzes divergence to determine unfair play,
-- Netflix and Amazon Prime's suggestions on what to watch are based on a ML model that analyzes your taste and makes similar recommendations
-- Tesla's autopilot driving software is based on computer vision and ML models that make real-time decisions on driving in society,
-- and many more examples.
+It’s clear that nowadays, Data Science is growing very rapidly since we have an ever-increasing amount of unstructured (and structured!) data available to us. It’s our job to understand this data and make sense of it. In the second half of the 20th century, Artificial Intelligence (AI) as we know it today was created. This allowed humans to “relax” their complex calculations, while delegating this job to a machine. Machine Learning has since become an important part of everyday life, even if it’s not apparent:
+- Email spam filters are based on ML models
+- Advanced video-game anti cheating systems (to prevent hackers) are based on ML models, that compare data from legitimate players to data from cheaters and analyzes divergence to determine unfair play
+- Netflix and Amazon Prime’s suggestions for what to watch are based on a ML model that analyzes your taste and makes similar recommendations
+- Tesla’s autopilot driving software is based on computer vision and ML models that make real-time decisions on driving in society
 
 ## Why we need PyTorch
 
-PyTorch is a great library that synergyzes very well with Python. When performing data analysis with Python, we need to understand that Python's interpreter is limited to execute on only one processor. This is called the GIL or Global Interpreter Lock, a mutex that allows only one thread to execute the interpreter (this can be avoided by implementing code with the **multiprocessing** module).
-However, most household computers and non-professional equipment rarely come with more than 16/32 cores, which means that we can theoretically improve the code optimization by 16/32-fold at maximum; unless we use the GPU to help us. 
+PyTorch is a great library that synergizes very well with Python. When performing data analysis with Python, we need to understand that Python’s interpreter is limited to execute on only one processor. This is called the GIL or Global Interpreter Lock, a mutex that allows only one thread to execute the interpreter (this can be avoided by implementing code with the **multiprocessing module**). However, most household computers and non-professional equipment rarely come with more than 16/32 cores, which means that we can theoretically improve the code optimization by 16/32-fold at maximum unless we use the GPU to help us.
 
-Luckily for us, PyTorch is GPU friendly: we can execute our code in CPUs, GPUs and even TPUs: Tensor Processing Unit, a specific unit of hardware developed by Google designed to be used for AI/ML purposes mostly.
+Luckily for us, PyTorch is GPU friendly: we can execute our code in CPUs, GPUs and even TPUs, Tensor Processing Units, which is a specific unit of hardware developed by Google designed to be used for AI/ML purposes mostly.
 
 From a mathematical perspective, a tensor is a group of data. A number is equivalent to a rank-0 tensor; a 1-dimensional array (vector) is a rank-1 tensor and a matrix is a rank-2 tensor. This goes on and on for more dimensions until we get a rank-n tensor.
 
@@ -31,11 +31,16 @@ Tensors allow us to group our data into optimized subsets that will run efficien
 
 ## Getting Started
 
-First, we need an environment where we'll run PyTorch code. For that, we head to the Oracle Cloud Infrastructure console. We have two options:
-- Create a compute instance, spin it up, install Jupyter Notebook or other notebook software where we'll run our Python code, and install PyTorch. This takes a bit longer than the second option since we have to do all the configuration ourselves, however we'll save some money in the long run as creating a compute instance is a bit cheaper than the second option.
-- Create a OCI Data Science notebook and install PyTorch. This is very straightforward and doesn't require that much IT knowledge; we'll have a live visualization of our notebooks and an interface to modify them in our browser. 
+First, we need an environment where we’ll run PyTorch code. For that, we head to the Oracle Cloud Infrastructure console.
+
+We have two options:
+
+- Create a compute instance, spin it up, install Jupyter Notebook or other notebook software where we’ll run our Python code, and install PyTorch. This takes a bit longer than the second option since we have to do all the configuration ourselves, however we’ll save some money in the long run as creating a compute instance is a bit cheaper than the second option.
+- Create a OCI Data Science notebook and install PyTorch. This is very straightforward and doesn’t require that much IT knowledge; we’ll have a live visualization of our notebooks and an interface to modify them in our browser.
 
 In this subsection, I'll showcase how to follow the second option (OCI Data Science).
+
+### Create an OCI Data Science Notebook and Install PyTorch
 
 First, I head over to the OCI console and navigate to OCI Data Science:
 
@@ -49,7 +54,7 @@ Inside this project, we can have several notebook sessions; and these sessions w
 
 ![3](https://raw.githubusercontent.com/jasperan/pytorch-tensorflow/main/img/3.PNG?raw=true)
 
-Now that we're inside the notebook, we have control over the machine (we can access it through a Terminal just like we would if we ssh'd into the machine) or we can control Python environments through the Environment Explorer. For new users, I highly recommend the environment explorer, as it has several pre-built environments ready to go. We can find PyTorch in the environment explorer very easily, and install it.
+Now that we’re inside the notebook, we have control over the machine (we can access it through a Terminal just like we would if we ssh’d into the machine) or we can control Python environments through the Environment Explorer. For new users, I highly recommend the environment explorer, as it has several pre-built environments ready to go. We can find PyTorch in the environment explorer very easily, and install it.
 
 ![4](https://raw.githubusercontent.com/jasperan/pytorch-tensorflow/main/img/4.PNG?raw=true)
 
@@ -95,11 +100,11 @@ X_scaled = scaler.fit_transform(X)
 X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.2, random_state=2) # we split our data 80/20%
 ```
 
-We configure a very simple Neural Network model with 3 linear layers and [Adam optimization](https://towardsdatascience.com/complete-guide-to-adam-optimization-1e5f29532c3d). If you're unfamiliar with these concepts, don't worry, we'll have an in-depth look into what these things mean in the following articles from this series. For now, just knowo that, Adam is an optimization algorithm with a __complex__ mathematical formula (see the image right below), but to get started, we don't need to fixate on this. You just need to know the following about Adam optimization (in general):
-- It's easy to implement
-- It's memory efficient
-- It's good for data intensive problems, which is why Adam optimization is well-known in Big Data
-- Hyper-parametrization (model tuning) is overshadowed by accurate results yielded by the model, which means, we'll generaly save some time.
+We configure a very simple Neural Network model with 3 linear layers and [Adam optimization](https://towardsdatascience.com/complete-guide-to-adam-optimization-1e5f29532c3d). If you’re unfamiliar with these concepts, don’t worry, we’ll have an in-depth look into what these things mean in the following articles from this series. For now, just know that Adam is an optimization algorithm with a complexmathematical formula (see the image right below), but to get started, we don’t need to fixate on this. You just need to know the following about Adam optimization (in general):
+- It’s easy to implement
+- It’s memory efficient
+- It’s good for data intensive problems, which is why Adam optimization is well-known in Big Data
+- Hyper-parametrization (model tuning) is overshadowed by accurate results yielded by the model, which means, we’ll generaly save some time.
 
 ![adam](https://raw.githubusercontent.com/jasperan/pytorch-tensorflow/main/img/adam.PNG?raw=true)
 
@@ -163,7 +168,7 @@ for epoch in tqdm.trange(EPOCHS):
         accuracy_list[epoch] = correct.mean()
 ```
 
-Now, we can create a [model artifact](https://docs.oracle.com/en-us/iaas/data-science/using/manage-models.htm). This is especially useful when developing code using Oracle Data Science notebooks, as it integrates with Oracle ADS (Accelerated Data Science), which simplifies saving and reusing the model in the future with simple commands.
+Now, we can create a [model artifact](https://docs.oracle.com/en-us/iaas/data-science/using/manage-models.htm). This is especially useful when developing code using Oracle Data Science notebooks as it integrates with Oracle ADS (Accelerated Data Science) which simplifies saving and reusing the model in the future with simple commands.
 
 ```python
 # we create the artifact in a temporary directory and store it in a pickle file, like in previous articles
@@ -200,7 +205,9 @@ model_artifact.predict(test_data)
    0.0006346192094497383]]}
 ```
 
-As we previously defined a rank-1 tensor (vector) beforehand, we are returned with 3 different numbers; if we sum them, it yields 1; and each one represents the probability* of each sample to be a given species. (* it's actually the weight of the categorization performed by the Neural Network by the activation function, which isn't technically a probability being returned; but it basically means that the bigger the number in the vector, the better chances the NN will decide that its category is the one in that position of the array.)
+As we previously defined a rank-1 tensor (vector) beforehand, we are returned with three different numbers. If we sum them, it yields 1; and each one represents the probability of each sample to be a given species.
+
+A note on that probability: it’s actually the weight of the categorization performed by the Neural Network by the activation function, which isn’t technically a probability being returned; but it basically means that the bigger the number in the vector, the better chances the NN will decide that its category is the one in that position of the array.
 
 I really hope that you enjoyed reading and learning about how to get started with PyTorch on OCI.
 
