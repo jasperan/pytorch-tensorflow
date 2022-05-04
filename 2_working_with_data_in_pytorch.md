@@ -148,6 +148,10 @@ print(w, b)
 
 This would be categorized as a **feedforward linear regression NN**, as we're not calculating any gradients or using autograd.
 
+As we saw, working with data (even if this was a very simple linear regression problem) isn't hard, even for beginners. We just need to let the main concepts of NNs sink in. In the following article from this article series, we'll do something similar, but using TensorFlow; and we'll be able to compare both libraries' performances by performing benchmarks by the end of the article series.
+
+Stay tuned...
+
 ## How can I get started on OCI?
 
 Remember that you can always sign up for free with OCI! Your Oracle Cloud account provides a number of Always Free services and a Free Trial with US$300 of free credit to use on all eligible OCI services for up to 30 days. These Always Free services are available for an **unlimited** period of time. The Free Trial services may be used until your US$300 of free credits are consumed or the 30 days has expired, whichever comes first. You can [sign up here for free](https://signup.cloud.oracle.com/?language=en&sourceType=:ow:de:te::::&intcmp=:ow:de:te::::).
