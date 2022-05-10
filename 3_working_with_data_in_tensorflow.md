@@ -24,7 +24,7 @@ o install it, we run the command with the corresponding pre-built identifier in 
 
 ## TensorFlow Fundamentals - Data Loading with Keras
 
-It's important to notice that, [in the first article from the series](https://github.com/jasperan/pytorch-tensorflow/1_getting_started_with_pytorch_on_oci.md) we loaded an initial dataset (the well-known iris dataset) and created a Neural Network from scratch, in order to make accurate predictions about the type of irises (setosa, versicolor or virginica). We did this through the PyTorch library, that included a custom-built dataset loader.
+It's important to notice that, [in the first article from the series](https://github.com/jasperan/pytorch-tensorflow/blob/main/1_getting_started_with_pytorch_on_oci.md) we loaded an initial dataset (the well-known iris dataset) and created a Neural Network from scratch, in order to make accurate predictions about the type of irises (setosa, versicolor or virginica). We did this through the PyTorch library, that included a custom-built dataset loader.
 
 Just like in PyTorch, TensorFlow also "likes" having their datasets loaded into tensors; however, [the official documentation](https://www.tensorflow.org/tutorials) points towards using **keras** as the data-loading library. It's pretty common to find Keras and TensorFlow being used interchangeably, as Keras eases the use of TensorFlow.
 
