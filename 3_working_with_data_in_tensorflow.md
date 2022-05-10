@@ -6,7 +6,7 @@ As a reminder, let's have some initial information about TensorFlow. TensorFlow 
 
 ## Setting up OCI
 
-To set up TensorFlow in OCI, we'll create a Data Science notebook in OCI, and we'll be able to access that notebook from the Cloud, saving us the trouble of setting up locally to start working on our project. This process that we'll follow is very similar to the steps we followed [in the first article from the series](https://github.com/jasperan/pytorch-tensorflow/1_getting_started_with_pytorch_on_oci.md). Make sure to check that article out if you run into trouble setting up a Data Science notebook in OCI.
+To set up TensorFlow in OCI, we'll create a Data Science notebook in OCI, and we'll be able to access that notebook from the Cloud, saving us the trouble of setting up locally to start working on our project. This process that we'll follow is very similar to the steps we followed [in the first article from the series](https://github.com/jasperan/pytorch-tensorflow/blob/main/1_getting_started_with_pytorch_on_oci.md). Make sure to check that article out if you run into trouble setting up a Data Science notebook in OCI.
 
 First of all, we set up an OCI Data Science environment and instantiate the Data Science, by heading over to the OCI console and navigating to __OCI Data Science__:
 
@@ -65,7 +65,7 @@ It's very complex and really up to the Data Scientist to choose the initial para
 - Change the architecture of the deep NN (reminder: a deep NN is just a NN with more than one hidden layer)
 - Change the loss function
 - Change the optimizer
-- Change the activation function function
+- Change the activation function
 
 Performing these things optimally takes a lot of practice and trial/error, so don't be discouraged to start, even if you don't know which values to input at the beginning.
 
