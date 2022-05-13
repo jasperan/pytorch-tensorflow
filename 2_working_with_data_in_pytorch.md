@@ -1,8 +1,8 @@
 # Working with Data in PyTorch
 
-Welcome to the second article of this article series, where we explore the differences and similarities between PyTorch and TensorFlow, and how to work around data with both libraries.
+Welcome to the second article of this series where we explore the differences and similarities between PyTorch and TensorFlow, and how to work with data with both libraries.
 
-In this article, we're going to do a deep-dive into PyTorch specifically, and how to work with data.
+In this article, we're doing a deep-dive into PyTorch specifically.
 
 It's important to note that PyTorch is considered a Pythonic library, which means that it integrates very well with the Data Science stack already present in Python. It has some advantages over TensorFlow:
 - It's newer than TensorFlow
@@ -18,10 +18,10 @@ A neural network's (NN) implementation works just like a neuron in the human bra
 - We have artificial neurons called perceptrons
 - A perceptron, just like a neuron would, connects with other neurons through axons (which in NNs are called **configurations**) to transmit data bilaterally
 
-In NNs, perceptrons are composed of a series of inputs and produce an output. So, at least, we'll always have one input layer and one output layer; it's up to us programmers to decide how these layers communicate and in which order.
+In NNs, perceptrons are composed of a series of inputs to produce an output. So we'll always have one input layer and one output layer; it's up to us programmers to decide how these layers communicate and in which order.
 
 There are two types of neural networks:
-- Feedforward NNs: data moves from the input layer to the output layer (through hidden layers or not, depends on the problem); and by the time data reaches the output layer, the NN has completed its job.
+- Feedforward NNs: data moves from the input layer to the output layer (through hidden layers or not, it depends on the problem); and by the time data reaches the output layer, the NN has completed its job.
 - Recurrent NNs: data doesn't stop at the output layer. Rather than doing so, it feeds again into previously-traversed layers recurrently, performing a specified number of cycles
     It's important to note that calculating gradients is based on [the chain rule](https://tutorial.math.lamar.edu/classes/calcI/ChainRule.aspx), which requires a bit of background in advanced mathematics. However, PyTorch has been kind enough to implement their own "automatic gradient calculator", called __autograd__, which does most of the mathematical work automatically. We'll talk more about this technique called [automatic differentiation](https://blog.paperspace.com/pytorch-101-understanding-graphs-and-automatic-differentiation/) later.
 
