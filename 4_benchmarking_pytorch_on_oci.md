@@ -26,22 +26,27 @@ For measuring PyTorch's performance, we'll use [a NN called EfficientNet](https:
 
 Think of EfficientNet models as the automation of the design & architecture part of NNs, which is very helpful, not only for our specific use case, but in several image processing problems that you'll find in your career as a Data Scientist / Data Analyst and similar.
 
-Finally, to conclude how good EfficientNet models are, we can have a look at both these visualizations which will probably give you a perspective of how well the introduction of this "coefficient" works. The first image considers the number of parameters in millions, compared to other models; and the second one compares the number of floating point operations performed by the models to make predictions.
 
-![vis1](https://raw.githubusercontent.com/tensorflow/tpu/main/models/official/efficientnet/g3doc/params.png?raw=true)
 
-![vis2](https://raw.githubusercontent.com/tensorflow/tpu/main/models/official/efficientnet/g3doc/flops.png?raw=true)
 
 https://github.com/tensorflow/tpu/blob/master/models/official/efficientnet/g3doc/params.png
 https://github.com/tensorflow/tpu/blob/master/models/official/efficientnet/g3doc/flops.png
 
 
-
-As an additional note to what's mentioned in last article, we can graphically observe the effect of the Dropout layer implemented, by looking at which neurons are activated and which ones are deactivated; and how this hidden layer implementation attempts to reduce the noise, subsequently increasing the train/test accuracy of the model:
+EfficientNet uses millions of parameters, and can therefore be considered a deep Neural Network. I wanted to mention the effect that the Dropout layer (which we applied in last article) can have on significantly improving the accuracy of an NN. Here, we can graphically observe the effect of a Dropout layer when implemented, by looking at which neurons are activated and which ones are deactivated, and how this hidden layer implementation attempts to reduce the noise created by inaccurate predictions, subsequently increasing the train/test accuracy of the model:
 
 ![mnist1](https://raw.githubusercontent.com/jasperan/pytorch-tensorflow/main/img/mnist1.PNG?raw=true)
 
 ![mnist2](https://raw.githubusercontent.com/jasperan/pytorch-tensorflow/main/img/mnist2.PNG?raw=true)
+
+One can argue that EfficientNet is a "simple" model, but in reality we need to consider that, since training is done automatically by computers, millions of operations are performed every second, which causes models like this to have millions of parameters. I took some visualizations from the original TensorFlow repository (which has some documentation about EfficientNet) and displayed it here for you, so you can have a sense of "size" of models such as this one; and to give you a perspective of how well EfficientNet's new coefficient C is compared to other models.
+
+The first image considers the number of parameters in millions, compared to other models; and the second one compares the number of floating point operations performed by the models to make predictions.
+
+![vis1](https://raw.githubusercontent.com/tensorflow/tpu/main/models/official/efficientnet/g3doc/params.png?raw=true)
+
+![vis2](https://raw.githubusercontent.com/tensorflow/tpu/main/models/official/efficientnet/g3doc/flops.png?raw=true)
+
 
 
 ## Benchmarking tools available
