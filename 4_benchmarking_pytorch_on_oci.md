@@ -43,9 +43,9 @@ One can argue that EfficientNet is a "simple" model, but in reality we need to c
 
 The first image considers the number of parameters in millions, compared to other models; and the second one compares the number of floating point operations performed by the models to make predictions.
 
-![vis1](https://raw.githubusercontent.com/tensorflow/tpu/main/models/official/efficientnet/g3doc/params.png?raw=true)
+![vis1](https://raw.githubusercontent.com/tensorflow/tpu/master/models/official/efficientnet/g3doc/params.png?raw=true)
 
-![vis2](https://raw.githubusercontent.com/tensorflow/tpu/main/models/official/efficientnet/g3doc/flops.png?raw=true)
+![vis2](https://raw.githubusercontent.com/tensorflow/tpu/master/models/official/efficientnet/g3doc/flops.png?raw=true)
 
 
 
