@@ -4,7 +4,7 @@ Welcome to the fourth article on this series where we do a deep dive into Neural
 
 From a popularity perspective, I extracted this information from Google Trends to analyze both popularities:
 
-![1](https://raw.githubusercontent.com/jasperan/pytorch-tensorflow/main/img/1.PNG?raw=true)
+![1](https://raw.githubusercontent.com/jasperan/pytorch-tensorflow/main/img/trend.PNG?raw=true)
 
 As we can observe, TensorFlow is reigning right now over the world. Let's see if performance matches expectations.
 
@@ -28,7 +28,7 @@ I've chosen to run with a CPU version, unlike previous articles where I used a G
 
 To increase the baseline performance of any model, we also need to consider what we're competing against. Surely, it's great to create our own model with a couple of layers and see our work being put under pressure against some datasets. But I believe the beauty in Data Science, and also the hardest part, is to know where to look for something better, that's been probably done by someone way smarter than us. Let's face it: there'll always be someone better than us at **anything** we'll ever try, so why not take advantage of this fact? The Internet allows us to look for better things, constantly.
 
-For measuring PyTorch's performance, we'll use [a deep Neural Network called EfficientNet](https://arxiv.org/abs/1905.11946), which has been tested against several image processing datasets. It's a pre-trained convolutional neural network that attempts to systematically change how people approach design & architecture of their own models. In this case, EfficientNet focuses on applying its own specific scaling throughout all dimensions of an image (depth, width, resolution) using a coefficient called C. Using this coefficient has been proven to work pretty well (one of its variants, called EfficientNet 7 has the highest accuracy ever on the ImageNet dataset), being about 8 times smaller than other models in the top list; and being about 6 times quicker. Aside from being able to predict results accurately against the ImageNet dataset (which could be considered an extremely difficult task by itself), it performs very well on other commonly known datasets such as [CIFAR100, a dataset that contains images of animals](https://github.com/tensorflow/tpu/blob/master/models/official/efficientnet/g3doc/flops.png), the Flowers dataset and three other datasets; with many less parameters than the model's competitors.
+For measuring PyTorch's performance, we'll use [a deep Neural Network called EfficientNet](https://arxiv.org/abs/1905.11946), which has been tested against several image processing datasets. It's a pre-trained convolutional neural network that attempts to systematically change how people approach design & architecture of their own models. In this case, EfficientNet focuses on applying its own specific scaling throughout all dimensions of an image (depth, width, resolution) using a coefficient called C. Using this coefficient has been proven to work pretty well (one of its variants, called EfficientNet 7 has the highest accuracy ever on the ImageNet dataset), being about 8 times smaller than other models in the top list; and being about 6 times quicker. Aside from being able to predict results accurately against the ImageNet dataset (which could be considered an extremely difficult task by itself), it performs very well on other commonly known datasets such as [CIFAR100, a dataset that contains images of animals](https://paperswithcode.com/dataset/cifar-100), the Flowers dataset and three other datasets; with many less parameters than the model's competitors.
 
 Think of EfficientNet models as the automation of the design & architecture part of NNs, which is very helpful, not only for our specific use case, but in several image processing problems that you'll find in your career as a Data Scientist / Data Analyst and similar.
 
@@ -51,7 +51,7 @@ The first image considers the number of parameters in millions, compared to othe
 
 There are several options to perform a benchmark. Of course, we can always use the standard libraries offered by Python to help us with this, or choose a more advanced approach like [PerfZero](https://github.com/tensorflow/benchmarks/tree/master/perfzero) or similar tools. In this case, we're going to avoid complicated libraries, as learning how to perform a benchmark in a correct way is more important than learning how to use a specific library / tool. As technology changes, I'll always say the most important thing is to have the concepts and basic ideas in our minds, and then dwelve into exploring and trying specifics if we need them in our use cases.
 
-So, to create this article I've tested a very easy to use package that I found from PyPi called [pytorch-benchmark](https://pypi.org/project/pytorch-benchmark/), and a standard time measurement. Props to [Lukas Hedegaard](https://github.com/LukasHedegaard/pytorch-benchmark) for the great package.
+So, to create this article I've tested a very easy to use package that I found from PyPi called [pytorch-benchmark](https://pypi.org/project/pytorch-benchmark/), and a standard time measurement. Props to [Lukas Hedegaard](https://github.com/LukasHedegaard/) for the great package.
 
 First of all, we install the library:
 
@@ -116,7 +116,7 @@ print(result) # beautify it
 ```
 
 
-After executing the function, we see [the output (very long in our case)](https://github.com/jasperan/pytorch-tensorflow/benchmark_out.txt). The benchmarking flow goes as follows (picture taken [from Lukas Hedegaard's GitHub](https://github.com/LukasHedegaard/pytorch-benchmark)): 
+After executing the function, we see [the output (very long in our case)](https://github.com/jasperan/pytorch-tensorflow/blob/main/benchmark_out.txt). The benchmarking flow goes as follows (picture taken [from Lukas Hedegaard's GitHub](https://github.com/LukasHedegaard/pytorch-benchmark)): 
 
 ![flow](https://raw.githubusercontent.com/jasperan/pytorch-tensorflow/main/img/flow.PNG?raw=true)
 
@@ -172,7 +172,7 @@ Remember that you can always sign up for free with OCI! Your Oracle Cloud accoun
 
 ## Join the conversation!
 
-If you’re curious about the goings-on of Oracle Developers in their natural habitat, come [join us on our public Slack channel](https://join.slack.com/t/oracledevrel/shared_invite/zt-uffjmwh3-ksmv2ii9YxSkc6IpbokL1g?customTrackingParam=:ow:de:te::::RC_WWMK220210P00062:Medium_nachoLoL5)! We don’t mind being your fish bowl 🐠
+If you’re curious about the goings-on of Oracle Developers in their natural habitat, come [join us on our public Slack channel](https://bit.ly/devrel_slack)! We don’t mind being your fish bowl 🐠
 
 ## License
 
