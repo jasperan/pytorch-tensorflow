@@ -65,7 +65,7 @@ We load our necessary modules into the code:
 import numpy as np
 import torch
 import torch.nn as nn
-import time
+import datetime
 from torchvision.models import efficientnet_b0, efficientnet_b1 # b0...b7
 from pytorch_benchmark import benchmark # benchmarking library
 ```
@@ -162,6 +162,8 @@ Also, 401 MFLOPS were calculated in a span of:
 This means about 15.4 MFLOPS / second, which also yields ~0.96 MFLOPS / second / CPU.
 
 In the next article, we'll do a similar exercise with TensorFlow, with the hope of trying to compare both libraries, and see if the hypothesis we formulated in previous articles about TensorFlow being a bit "slower" due to the Keras ecosystem being used on top of TensorFlow itself.
+
+I've attached [the notebook with the code used in this article](https://github.com/jasperan/pytorch-tensorflow/blob/main/article4.ipynb) in case you're interested in downloading and trying yourself.
 
 Stay tuned...
 
