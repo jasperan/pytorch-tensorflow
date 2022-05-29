@@ -58,7 +58,7 @@ We clone the repository into our machine:
 git clone https://github.com/tensorflow/benchmarks.git
 ```
 
-And we can build our Docker image to execute whenever we want. But before that, we need to install Docker into our machine. I used [this very handy]() repository which has a root/non-root userscript to automatically install and setup the Docker daemon inside our machine:
+And we can build our Docker image to execute whenever we want. But before that, we need to install Docker into our machine. I used [this very handy](https://github.com/docker/docker-install) repository which has a root/non-root userscript to automatically install and setup the Docker daemon inside our machine:
 
 ```bash
 curl -O https://github.com/docker/docker-install/blob/master/install.sh
@@ -82,7 +82,7 @@ nvidia-docker run -it --rm -v $(pwd):/workspace -v /data:/data perfzero/tensorfl
 python3 /workspace/benchmarks/perfzero/lib/benchmark.py --gcloud_key_file_url="" --git_repos="https://github.com/tensorflow/models.git;benchmark" --python_path=models --benchmark_methods=official.r1.resnet.estimator_benchmark.Resnet50EstimatorBenchmarkSynth.benchmark_graph_1_gpu --root_data_dir=/data
 ```
 
-Note that you may run into some trouble with Google libraries. What I did to fix this is to modify the original code to ignore __gsutils__ and other libraries that were throwing errors during runtime. Note that the root of some of these issues is that the library was developed by the TensorFlow team, so they made integrations to automatically deploy in a Google Cloud instance instead of OCI. If you want to avoid these issues, you can [find the solution in the documentation](https://github.com/tensorflow/benchmarks/tree/master/perfzero#perfzero-on-local-workstation-or-any-server). [The example that doesn't require accessing Google Cloud for any data](https://github.com/tensorflow/benchmarks/tree/master/perfzero#perfzero-on-local-workstation-or-any-server) will work in any instance.
+Note that you may run into some trouble with Google libraries. What I did to fix this is to modify the original code to ignore __gsutils__ and other libraries that were throwing errors during runtime. Note that the root of some of these issues is that the library was developed by the TensorFlow team, so they made integrations to automatically deploy in a Google Cloud instance instead of OCI. If you want to avoid these issues, you can [find the solution in the documentation](https://github.com/tensorflow/benchmarks/tree/master/perfzero#perfzero-on-local-workstation-or-any-server). The example that doesn't require accessing Google Cloud for any data will work in any instance.
 
 And we can observe our model performance, in this case, a CIFAR-10 regressor, together with some model's metrics. Here's an example:
 
