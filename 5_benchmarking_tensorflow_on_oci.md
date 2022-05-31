@@ -1,4 +1,4 @@
-# Benchmarking TensorFlow on OCI & EfficientNet's Models
+# Benchmarking TensorFlow on OCI
 
 ## Introduction
 
@@ -163,7 +163,7 @@ And we can observe our model performance, in this case, a CIFAR-10 regressor, to
 }
 ```
 
-## Measuring OCI Performance vs. GCE vs. AWS
+## Measuring OCI Performance
 
 Now that we've assessed how well TensorFlow and PyTorch can work on OCI, we should focus our attention on why OCI is the better solution for developing your own NN projects (or AI/ML for that matter).
 
